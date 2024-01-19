@@ -1,0 +1,48 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+
+  @include onTablet {
+    width: 150px;
+    gap: 16px;
+  }
+
+  &__home-image {
+    display: flex;
+    height: 16px;
+    width: 16px;
+  }
+
+  &__arrow {
+    height: 16px;
+    width: 16px;
+    background-image: url(../../icons/arrow-disabled-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__title {
+    @include smallText;
+    text-decoration: none;
+    margin: 0;
+    color: $secondary-color;
+    line-height: 12px;
+
+    &--target {
+      color: $secondary-color;
+    }
+  }
+
+  &__product-title {
+    @include smallText;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

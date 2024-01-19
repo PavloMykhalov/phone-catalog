@@ -1,27 +1,31 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.scss';
+import { useContext } from 'react';
+import { Footer } from './components/Footer/Footer';
+import { Header } from './components/Header/Header';
+import { GlobalContext } from './components/Context/GlobalContext';
+import { Loader } from './components/Loader/Loader';
 
-interface Props {
-  onClick: () => void;
-}
+const App = () => {
+  const { isLoading } = useContext(GlobalContext);
 
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
-
-export const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+    <div className="App">
+      <Header />
+
+      <main className="main-content">
+        <div className="main-content__container">
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <Outlet />
+          )}
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };
+
+export default App;

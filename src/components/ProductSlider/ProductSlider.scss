@@ -1,0 +1,76 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+$card-gap: 16px;
+
+.product-slider {
+  width: 100%;
+  height: 572px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onTablet {
+    height: 480px;
+  }
+
+  &__top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 12px;
+    }
+
+    &-title {
+      @include h1Text;
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      width: 32px;
+      background-color: #fff;
+      border: 1px solid $icons-color;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    overflow: hidden;
+    width: $card-width-desktop * 4 + $card-gap * 3;
+
+    @include onDesktop {
+      width: $card-width-desktop * 3 + $card-gap * 2;
+    }
+
+    @include onTablet {
+      width: $card-width-mobile * 3 + $card-gap * 2;
+    }
+
+    @include onMobile {
+      width: $card-width-mobile * 2 + $card-gap;
+
+      @media (max-width: 500px) {
+        width: $card-width-mobile;
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: $card-gap;
+    }
+  }
+}

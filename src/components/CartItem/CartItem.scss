@@ -1,0 +1,156 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.cart-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 450px;
+  padding-block: 24px;
+  padding-inline: 40px;
+  border: 1px solid $elements-color;
+
+  @include onMobile {
+    gap: 30px;
+    padding: 15px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include onMobile {
+      gap: 12px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__delete {
+    background-image: url(../../icons/icon-close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: #fff;;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    @include onMobile {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    &--container {
+      display: flex;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 31px;
+    align-items: center;
+    text-decoration: none;
+    color: $primary-color;
+
+    @include onMobile {
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    @include bodyText;
+    width: 296px;
+
+    @include onMobile {
+      width: 150px;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 43px;
+    gap: 13px;
+    @include bodyText;
+
+    @include onMobile {
+      justify-content: center;
+      margin: 0;
+      gap: 6px;
+    }
+
+    &--count {
+      text-align: center;
+      width: 15px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    @include h2Text;
+
+    @include onMobile {
+      font-size: 24px;
+    }
+  }
+}
+
+.button {
+  height: 32px;
+  width: 32px;
+  border: 1px solid $icons-color;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onMobile {
+    height: 25px;
+    width: 25px;
+  }
+
+  &--minus {
+    background-image: url(../../icons/icon-minus.svg);
+
+    @include onMobile {
+      order: 1;
+    }
+
+    &-disabled {
+      background-image: url(../../icons/icon-minus-disabled.svg);
+
+      &:hover {
+        border-color: $icons-color;
+      }
+    }
+  }
+
+  &--plus {
+    background-image: url(../../icons/icon-plus.svg);
+
+    @include onMobile {
+      order: -1;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  margin-top: 24px;
+  margin-bottom: 16px;
+
+  &__icon {
+    height: 16px;
+    width: 16px;
+  }
+
+  &__text {
+    @include smallText;
+    color: $secondary-color;
+  }
+}

@@ -1,0 +1,95 @@
+@import '../../utils/mixins.scss';
+@import '../../utils/variables.scss';
+
+
+.footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 96px;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $elements-color;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    margin-left: 15px;
+    @include hover(scale, 1.07);
+
+    &-image {
+      height: 24px;
+      width: 40px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    & > * {
+      position: relative;
+      @include uppercaseText;
+      color: $secondary-color;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: $secondary-color;
+
+        transition: transform $transition-duration;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &--text {
+      @include smallText;
+      color: $secondary-color;
+    }
+  }
+}
+
+.button-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+  border: 1px solid $icons-color;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}

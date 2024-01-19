@@ -1,0 +1,135 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 24px;
+  height: 507px;
+  width: $card-width-desktop;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid $elements-color;
+
+  @include onTablet {
+    width: $card-width-mobile;
+    height: 420px;
+    padding: 20px 16px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(#172031, 0.26);
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    height: 208px;
+    width: 208px;
+
+    @include onTablet {
+      height: 150px;
+      width: 150px;
+      margin-bottom: 16px;
+    }
+
+    &--item {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    line-height: 21px;
+    color: $primary-color;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 42px;
+  }
+
+  &__price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    @include onMobile {
+      margin-bottom: 8px;
+    }
+
+    &-fullPrice {
+      font-size: 22px;
+      color: $secondary-color;
+      font-weight: 500;
+      line-height: 140%;
+      text-decoration: line-through;
+
+      @include onTablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &-current {
+      font-size: 22px;
+      color: $primary-color;
+      font-weight: 700;
+      line-height: 140%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: 44px;
+      height: 1px;
+      width: 100%;
+      background-color: $elements-color;
+    }
+  }
+
+  &__properties {
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__screen,
+  &__capacity {
+    margin-bottom: 8px;
+  }
+
+  &__screen,
+  &__capacity,
+  &__ram {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__screen-text,
+  &__capacity-text,
+  &__ram-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: $secondary-color;
+  }
+
+  &__screen-value,
+  &__capacity-value,
+  &__ram-value {
+    color: $primary-color;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+
