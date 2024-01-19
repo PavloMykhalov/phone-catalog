@@ -30,9 +30,8 @@ You can view a preview of the project by the link [here]()
 ## Getting Started
 To run the project on a local server, follow these steps:
 
-## Clone the repository to your computer.
-Run the npm install command to install project dependencies.
-Use the npm start command to launch a local server for viewing the project in a web browser.
+- Run the `npm install` command to install project dependencies.
+- Use the `npm start` command to launch a local server for viewing the project in a web browser.
 
 ## Contribution
 If you have ideas for improving this project or if you've found any issues, please share your suggestions by opening a new issue or making a pull request.
